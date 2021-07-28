@@ -20,4 +20,12 @@ async def on_message(message: discord.Message):
     if message.content == "huh": 
         await message.channel.send("HUH")
 
+@client.event
+async def on_message(message:discord.Message):
+    if message.author.bot:
+        return
+    if message.content == "Hi":
+        await message.channel.send("Hi bubba")
+
+
 client.run(TOKEN)
