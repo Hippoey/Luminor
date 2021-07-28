@@ -1,10 +1,23 @@
 import discord
 from discord.ext import commands
+import os
+from dotenv import load_dotenv
 
-client = commands.Bot(command_prefix = '*')
+load_dotenv()
+
+TOKEN = os.getenv("TOKEN")
+
+client = discord.Client()
 
 @client.event 
 async def on_ready():
     print('Bot is ready.')
 
-client.run('ODY5ODc0OTE5OTU2MTg1MTQ4.YQEkJg.cidK38_4e7bFr00znvuFKVulj8U')
+@client.event
+async def on_message(message: discord.Message):
+    if message.author.bot:
+        return
+    if message.content == "huh": 
+        await message.channel.send("HUH")
+
+client.run(TOKEN)
