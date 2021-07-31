@@ -12,6 +12,7 @@ client = discord.Client()
 
 @client.event 
 async def on_ready():
+    await client.change_presence(activity=discord.Game(name="'luminor' for help"))
     print('Bot is ready .')
 
 @client.event
@@ -26,7 +27,8 @@ async def on_message(message: discord.Message):
         await message.channel.send("<@665488298533322762>", delete_after=0.5)
         await message.delete()
     if message.content =='luminor':
-        embedVar = discord.Embed(title="Hi! I'm Luminor Bot", description="", color=0x6c5ce7)
+        embedVar = discord.Embed(title="Hi! I'm Luminor", description="", color=0x6c5ce7)
+        embedVar.add_field(name="Command list", value="hi \nhuh", inline=True)
         await message.channel.send(embed=embedVar)
 
 keep_alive() 
