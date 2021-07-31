@@ -12,8 +12,9 @@ client = discord.Client()
 
 @client.event 
 async def on_ready():
-    await client.change_presence(activity=discord.Game(name="'luminor' for help"))
-    print('Bot is ready .')
+   activity = discord.Game(name="'luminor' for help", type=3)
+   await client.change_presence(status=discord.Status.dnd, activity=activity)
+   print('Bot is ready .')
 
 @client.event
 async def on_message(message: discord.Message):
