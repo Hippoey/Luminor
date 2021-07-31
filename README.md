@@ -1,2 +1,2 @@
-# o2
-discord bot
+# Luminor
+Discord bot
