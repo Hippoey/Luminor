@@ -13,7 +13,7 @@ client = discord.Client()
 @client.event 
 async def on_ready():
    activity = discord.Game(name="'luminor' for help", type=3)
-   await client.change_presence(status=discord.Status.dnd, activity=activity)
+   await client.change_presence(status=discord.Status.online, activity=activity)
    print('Bot is ready .')
 
 @client.event
@@ -29,7 +29,7 @@ async def on_message(message: discord.Message):
         await message.delete()
     if message.content =='luminor':
         embedVar = discord.Embed(title="Hi! I'm Luminor", description="", color=0x6c5ce7)
-        embedVar.add_field(name="Word list", value="hi \nhuh", inline=True)
+        embedVar.add_field(name="Word list", value="hi \nhuh \nsheesh", inline=True)
         await message.channel.send(embed=embedVar)
 
 keep_alive() 
