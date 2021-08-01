@@ -1,3 +1,4 @@
+from discord import message
 from keep_alive import keep_alive
 import discord
 from discord.ext import commands
@@ -31,6 +32,13 @@ async def on_message(message: discord.Message):
         embedVar = discord.Embed(title="Hi! I'm Luminor", description="", color=0x6c5ce7)
         embedVar.add_field(name="Word list", value="hi \nhuh \nsheesh", inline=True)
         await message.channel.send(embed=embedVar)
-
+    if "nigger" in message.content:
+        await message.author.ban(reason="Racist", delete_message_days=7)
+    if "nigga" in message.content:
+        await message.author.ban(reason="Racist", delete_message_days=7)
+    if "Nigga" in message.content:
+        await message.author.ban(reason="Racist", delete_message_days=7)
+    if "Nigger" in message.content:
+        await message.author.ban(reason="Racist", delete_message_days=7)
 keep_alive() 
 client.run(TOKEN)
