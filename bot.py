@@ -40,5 +40,9 @@ async def on_message(message: discord.Message):
         await message.author.ban(reason="Racist", delete_message_days=7)
     if "Nigger" in message.content:
         await message.author.ban(reason="Racist", delete_message_days=7)
+    if "NIGGER" in message.content:
+        await message.author.ban(reason="Racist", delete_message_days=7)
+    if "NIGGA" in message.content:
+        await message.author.ban(reason="Racist", delete_message_days=7)
 keep_alive() 
 client.run(TOKEN)
