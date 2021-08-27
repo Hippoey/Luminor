@@ -19,8 +19,8 @@ reddit = praw.Reddit(client_id='Dec7VPO9YEnNZ2vK_Bhu1w',
 
 @client.event 
 async def on_ready():
-   activity = discord.Game(name="'luminor' for help", type=3)
-   await client.change_presence(status=discord.Status.online, activity=activity)
+   activity = discord.Game(name=("luminor help"), type=3)
+   await client.change_presence(status=discord.Status.idle, activity=activity)
    print('Bot is ready .')
 
 @client.event
