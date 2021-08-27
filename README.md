@@ -1,2 +1,2 @@
 # Luminor
-Discord bot
+Luminor 
