@@ -29,12 +29,9 @@ async def on_message(message: discord.Message):
         return
     if "huh" in message.content: 
         await message.channel.send("HUH")
-    if message.content == "hi":
-        await message.channel.send("Hello")
-    if message.content == "sheesh":
-        await message.channel.send("<@665488298533322762>", delete_after=0.5)
     if message.content =='luminor help':
         embedVar = discord.Embed(title="Hi! I'm Luminor", description="", color=0x6c5ce7)
+        embedVar.add_field(name="Hippoey", value="huh", inline=False)
         await message.channel.send(embed=embedVar)
     if "nigger" in message.content:
         await message.author.ban(reason="Racist", delete_message_days=7)
