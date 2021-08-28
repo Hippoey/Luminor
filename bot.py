@@ -23,7 +23,7 @@ reddit = praw.Reddit(client_id='Dec7VPO9YEnNZ2vK_Bhu1w',
 async def test():
     channel = client.get_channel(868076426312704021)
     message = ["What's that?", "You got that drip? Dayum bro!", "Hello there","HUH", "Sheeeeeeeesh!!!!!!", "Baba Boeey", "That's cap", "baaaap"]
-    await channel.send(message[random. randint(0,3)])
+    await channel.send(message[random. randint(0,7)])
 
 @client.event 
 async def on_ready():
