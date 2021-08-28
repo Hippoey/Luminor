@@ -21,7 +21,7 @@ reddit = praw.Reddit(client_id='Dec7VPO9YEnNZ2vK_Bhu1w',
 
 @tasks.loop(minutes=20)
 async def test():
-    channel = client.get_channel(868076426312704021)
+    channel = client.get_channel(881035045765275720)
     message = ["What's that?", "You got that drip? Dayum bro!", "Hello there","HUH", "Sheeeeeeeesh!!!!!!", "Baba Boeey", "That's cap", "baaaap"]
     await channel.send(message[random. randint(0,7)])
 
