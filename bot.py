@@ -46,7 +46,7 @@ async def on_ready():
     activity = discord.Game(name=("luminor help"), type=3)
     test.start()
     await client.change_presence(status=discord.Status.online, activity=activity)
-    print("Bot is ready .")
+    print("Bot is ready.")
 
 
 @client.event
