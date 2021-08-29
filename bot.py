@@ -15,9 +15,12 @@ TOKEN = os.getenv("TOKEN")
 
 client = discord.Client()
 
-reddit = praw.Reddit(client_id=os.getenv('REDDIT_CRED_ID'),
-                     client_secret=os.getenv('REDDIT_CRED_SECRET'),
-                     user_agent='imyourmother')
+reddit = praw.Reddit(
+    client_id=os.getenv("REDDIT_CRED_ID"),
+    client_secret=os.getenv("REDDIT_CRED_SECRET"),
+    user_agent="imyourmother",
+)
+
 
 @tasks.loop(minutes=20)
 async def test():
