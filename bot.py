@@ -22,8 +22,8 @@ reddit = praw.Reddit(client_id='Dec7VPO9YEnNZ2vK_Bhu1w',
 @tasks.loop(minutes=20)
 async def test():
     channel = client.get_channel(881035045765275720)
-    message = ["What's that?", "You got that drip? Dayum bro!", "Hello there","HUH", "Sheeeeeeeesh!!!!!!", "Baba Boeey", "That's cap", "baaaap"]
-    await channel.send(message[random. randint(0,7)])
+    message = ["What's that?", "You got that drip? Dayum bro!", "Hello there","HUH", "Sheeeeeeeesh!!!!!!", "Baba Boeey", "That's cap!", "baaaap", "What's the time?", "How could this happen to me", "https://tenor.com/view/dead-chat-gif-22605399"]
+    await channel.send(message[random. randint(0,10)])
 
 @client.event 
 async def on_ready():
@@ -42,18 +42,13 @@ async def on_message(message: discord.Message):
         embedVar = discord.Embed(title="Hi! I'm Luminor", description="", color=0x6c5ce7)
         embedVar.add_field(name="Welcome to the help centre!", value="huh", inline=False)
         await message.channel.send(embed=embedVar)
-    if "nigger" in message.content:
-        await message.author.ban(reason="Racist", delete_message_days=7)
-    if "nigga" in message.content:
-        await message.author.ban(reason="Racist", delete_message_days=7)
-    if "Nigga" in message.content:
-        await message.author.ban(reason="Racist", delete_message_days=7)
-    if "Nigger" in message.content:
-        await message.author.ban(reason="Racist", delete_message_days=7)
-    if "NIGGER" in message.content:
-        await message.author.ban(reason="Racist", delete_message_days=7)
-    if "NIGGA" in message.content:
-        await message.author.ban(reason="Racist", delete_message_days=7)
+    if "luminor censor this word" in message.content:
+        await message.channel.send("What word would that be?")
+        def check(m: discord.Message):
+            return m.author.id == message.author.id and m.channel == message.channel
+
+        msg = await client.wait_for("message", check=check)
+        await message.channel.send(f"Word censored!")
     if "luminor meme" in message.content:
         memes_submissions = reddit.subreddit('memes').hot()
         post_to_pick = random.randint(1, 10)
