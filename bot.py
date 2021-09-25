@@ -1,4 +1,4 @@
-from discord import message
+from discord import member, message
 import praw
 import random
 from keep_alive import keep_alive
@@ -55,6 +55,8 @@ async def on_message(message: discord.Message):
         return
     if "huh" in message.content:
         await message.channel.send("HUH")
+    if message.content == "Nigga":
+        await member.ban(reason='Racist')
     if message.content == "luminor help":
         embedVar = discord.Embed(
             title="Hi! I'm Luminor", description="", color=0x6C5CE7
@@ -63,14 +65,6 @@ async def on_message(message: discord.Message):
             name="Welcome to the help centre!", value="huh", inline=False
         )
         await message.channel.send(embed=embedVar)
-    if "luminor censor this word" in message.content:
-        await message.channel.send("What word would that be?")
-
-        def check(m: discord.Message):
-            return m.author.id == message.author.id and m.channel == message.channel
-
-        msg = await client.wait_for("message", check=check)
-        await message.channel.send(f"Word censored!")
     if "luminor meme" in message.content:
         memes_submissions = reddit.subreddit("memes").hot()
         post_to_pick = random.randint(1, 10)
