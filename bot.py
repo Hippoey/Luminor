@@ -1,4 +1,3 @@
-      
 from discord import message
 import praw
 import random
@@ -80,9 +79,14 @@ async def on_message(message: discord.Message):
             ups = submission.score
             comments = submission.num_comments
             link = submission.permalink
-        embedVar = discord.Embed(title=submission.title, url=f"https://reddit.com{link}", description="", color=0x6C5CE7)
+        embedVar = discord.Embed(
+            title=submission.title,
+            url=f"https://reddit.com{link}",
+            description="",
+            color=0x6C5CE7,
+        )
         embedVar.set_image(url=submission.url)
-        embedVar.set_footer(text = f"👍{ups} 💬{comments}")
+        embedVar.set_footer(text=f"👍{ups} 💬{comments}")
         await message.channel.send(embed=embedVar)
 
 
