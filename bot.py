@@ -56,7 +56,7 @@ async def on_message(message: discord.Message):
     if "huh" in message.content:
         await message.channel.send("HUH")
     if message.content == "Nigga":
-        await member.ban(reason='Racist')
+        await member.ban(reason="Racist")
     if message.content == "luminor help":
         embedVar = discord.Embed(
             title="Hi! I'm Luminor", description="", color=0x6C5CE7
