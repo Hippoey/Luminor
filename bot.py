@@ -86,7 +86,7 @@ async def on_message(message: discord.Message):
             color=0x6C5CE7,
         )
         embedVar.set_image(url=submission.url)
-        embedVar.set_footer(text=f"👍{ups} 💬{comments}")
+        embedVar.set_footer(text=f"👍 {ups} 💬 {comments}")
         await message.channel.send(embed=embedVar)
 
 
