@@ -1,3 +1,4 @@
+      
 from discord import message
 import praw
 import random
@@ -76,9 +77,12 @@ async def on_message(message: discord.Message):
         post_to_pick = random.randint(1, 10)
         for i in range(0, post_to_pick):
             submission = next(x for x in memes_submissions if not x.stickied)
-
-        embedVar = discord.Embed(title="Meme", description="", color=0x6C5CE7)
+            ups = submission.score
+            comments = submission.num_comments
+            link = submission.permalink
+        embedVar = discord.Embed(title=submission.title, url=f"https://reddit.com{link}", description="", color=0x6C5CE7)
         embedVar.set_image(url=submission.url)
+        embedVar.set_footer(text = f"👍{ups} 💬{comments}")
         await message.channel.send(embed=embedVar)
 
 
