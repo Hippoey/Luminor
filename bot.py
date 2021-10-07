@@ -82,19 +82,26 @@ async def on_message(message: discord.Message):
         embedVar.set_image(url=submission.url)
         embedVar.set_footer(text=f"👍 {ups} 💬 {comments}")
         await message.channel.send(embed=embedVar)
-        
+
     if "luminor slots" in message.content:
-        responses = ["🍋", "🍊","🍉",":seven:"]
-        respInEmbed = random.choice(responses) + random.choice(responses) + random.choice(responses)
-        embedSlots=discord.Embed(title="🎰 Slot Machine 🎰", description=respInEmbed, color=0x176cd5)
+        responses = ["🍋", "🍊", "🍉", ":seven:"]
+        respInEmbed = (
+            random.choice(responses)
+            + random.choice(responses)
+            + random.choice(responses)
+        )
+        embedSlots = discord.Embed(
+            title="🎰 Slot Machine 🎰", description=respInEmbed, color=0x176CD5
+        )
         embedSlots.set_footer(text="You need triple 7's to win.")
         await message.channel.send(embed=embedSlots)
         if respInEmbed == ":seven::seven::seven:":
-            embedWin = discord.Embed(title="🎉 You Won!", description="You got three :seven:'s! GGs", color=ctx.author.color)
+            embedWin = discord.Embed(
+                title="🎉 You Won!",
+                description="You got three :seven:'s! GGs",
+                color=ctx.author.color,
+            )
             await message.channel.send(embedWin=embedWin)
-
-
- 
 
 
 keep_alive()
