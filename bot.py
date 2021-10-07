@@ -99,7 +99,7 @@ async def on_message(message: discord.Message):
             embedWin = discord.Embed(
                 title="🎉 You Won!",
                 description="You got three :seven:'s! GGs",
-                color=ctx.author.color,
+                color=message.author.color,
             )
             await message.channel.send(embedWin=embedWin)
 
